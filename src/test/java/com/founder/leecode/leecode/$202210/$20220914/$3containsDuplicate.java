@@ -1,0 +1,27 @@
+package com.founder.leecode.leecode.$202210.$20220914;
+
+public class $3containsDuplicate {
+
+    public static  boolean containsDuplicate(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i+1; j < nums.length; j++) {
+                if(nums[i]==nums[j]){
+                    return true;
+                }
+                if(nums[i]>nums[j]){
+                    int temp;
+                    temp = nums[j];
+                    nums[j] = nums[i];
+                    nums[i] = temp;
+                }
+            }
+
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1,2,3,4};
+        System.out.println(containsDuplicate(nums));
+    }
+}
